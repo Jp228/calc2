@@ -16,7 +16,18 @@ class Calculator:
         """ adds number to result"""
         self.result = self.result + value_a
         return self.result
+
     def subtract_number(self, value_a):
         """ subtract number from result"""
         self.result = self.result - value_a
+        return self.result
+
+    def multiply_number(self,value_a):
+        """ multiply number from result"""
+        self.result = self.result * value_a
+        return self.result
+
+    def divide_number(self,value_a):
+        """ divide number from result"""
+        self.result = self.result / value_a
         return self.result
