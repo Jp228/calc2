@@ -25,6 +25,7 @@ def test_calculator_subtract():
     calc = Calculator()
     calc.subtract_number(1)
     assert calc.get_result() == -1
+
 def test_calculator_multiply():
     """ tests multiplication of two numbers"""
     calc = Calculator()
@@ -36,3 +37,9 @@ def test_calculator_divide():
     calc = Calculator()
     calc.divide_number(1,2)
     assert calc.get_result() == 0.5
+
+def test_calculator_divide2():
+    """Testing the divide method of the calculator"""
+    calc = Calculator()
+    calc.divide_number(1,0)
+    assert calc.get_result() == 0
