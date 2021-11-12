@@ -2,10 +2,10 @@
 from calc.calculations.calculation import Calculation
 
 class Multiplication(Calculation):
-    """subtraction calculation object"""
+    """multiplication calculation object"""
     def get_result(self):
         """get the multiplication results"""
-        result = 1.0
-        for value in self.values:
+        result = self.values[0]
+        for value in self.values[1:]:
             result = result * value
         return result
