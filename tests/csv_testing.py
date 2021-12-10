@@ -1,5 +1,6 @@
 """testing Addition class"""
 import pandas as pd
+import pytest
 
 from calc.calculator import Calculator
 #from calc.calculations.calculation import Calculation
@@ -58,7 +59,11 @@ def test_csvreader_divide():
     for row in data.iterrows():
         tuple_values = (row['value_1'], row['value_2'])
         result = Calculator.divide_number(tuple_values)
-        assert result == row['result']
+        try:
+            assert result == row['result']
+        except ZeroDivisionError:
+            with pytest.raises(ZeroDivisionError):
+                assert result.get_result() is True
 
 def test_csvreader_dividebig():
     """testing with csv file"""
@@ -66,4 +71,8 @@ def test_csvreader_dividebig():
     for row in data.iterrows():
         tuple_values = (row['value_1'], row['value_2'])
         result = Calculator.divide_number(tuple_values)
-        assert result == row['result']
+        try:
+            assert result == row['result']
+        except ZeroDivisionError:
+            with pytest.raises(ZeroDivisionError):
+                assert result.get_result() is True

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+    $('#footer').css('top', $('#text').outerHeight() + 125 + 'px');
+
+
+    function get_flashed_messages() {
+        "test"
+    }
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class=" alert alert-warning alert-dismissible" role="alert">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</script>
+
+</body>
+</html>
